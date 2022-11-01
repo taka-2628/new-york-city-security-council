@@ -5,3 +5,332 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "Seeding neighborhoods..."
+Neighborhood.create(
+  [
+    {
+      borough: "Manhattan",
+      neighborhood: "Chelsea and Clinton"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Lower East Side"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Lower Manhattan"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Gramercy Park and Murray Hill"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Greenwich Village and Soho"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Upper East Side"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Upper West Side"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Central Harlem"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "East Harlem"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Inwood and Washington Heights"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "West Side"
+    },
+    {
+      borough: "Manhattan",
+      neighborhood: "Tribeca"
+    },
+    {
+      borough: "Staten Island",
+      neighborhood: "Stapleton and St. George"
+    },
+    {
+      borough: "Staten Island",
+      neighborhood: "Port Richmond"
+    },
+    {
+      borough: "Staten Island",
+      neighborhood: "South Shore"
+    },
+    {
+      borough: "Staten Island",
+      neighborhood: "Mid-Island"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "High Bridge and Morrisania"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "Central Bronx"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "Hunts Point and Mott Haven"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "Bronx Park and Fordham"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "Southeast Bronx"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "Kingsbridge and Riverdale"
+    },
+    {
+      borough: "Bronx",
+      neighborhood: "Northeast Bronx"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Southeast Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Northwest Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Long Island City"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Northwest Brooklyn"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Flatbush"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Borough Park"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Bushwick and Williamsburg"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "East New York and New Lots"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Southwest Brooklyn"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Greenpoint"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Central Brooklyn"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Sunset Park"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Southern Brooklyn"
+    },
+    {
+      borough: "Brooklyn",
+      neighborhood: "Canarsie and Flatlands"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "North Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Northeast Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Central Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "West Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "West Central Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Jamaica"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Southwest Queens"
+    },
+    {
+      borough: "Queens",
+      neighborhood: "Rockaways"
+    }
+  ]
+)
+
+
+puts "Seeding users..."
+User.create([
+  {
+    neighborhood_id: 7,
+    username: "test_jo",
+    password: "jojojo",
+    email: "test.jo@gmail.com",
+    fullname: "Test Jo",
+    phone: "0000000000",
+    address_1: "123 New York Ave",
+    address_2: "Apt 123",
+    city: "New York",
+    state: "NY",
+    zipcode: "10000",
+    date_of_birth: Date.current, 
+    gender: "male",
+    occupation: "VR/AR developer",
+    citizenship: ""
+  },
+  {
+    neighborhood_id: 7,
+    username: "test_joyce",
+    password: "joyce!",
+    email: "test.joyce@gmail.com",
+    fullname: "Test Joyce",
+    phone: "0000000000",
+    address_1: "123 New York Ave",
+    address_2: "Apt 123",
+    city: "New York",
+    state: "NY",
+    zipcode: "10000",
+    date_of_birth: Date.current, 
+    gender: "female",
+    occupation: "UIUX designer",
+    citizenship: ""
+  },
+  {
+    neighborhood_id: 7,
+    username: "test_takashi",
+    password: "takataka",
+    email: "test.takashi@gmail.com",
+    fullname: "Test Takashi",
+    phone: "0000000000",
+    address_1: "123 New York Ave",
+    address_2: "Apt 123",
+    city: "New York",
+    state: "NY",
+    zipcode: "10000",
+    date_of_birth: Date.current, 
+    gender: "male",
+    occupation: "Create Technologist",
+    citizenship: ""
+  }
+])
+
+puts "Seeding social media platforms..."
+SocialMediaPlatform.create([
+  {
+    social_media: "Facebook"
+  },
+  {
+    social_media: "Instagram"
+  },
+  {
+    social_media: "Twitter"
+  },
+  {
+    social_media: "TikTok"
+  },
+  {
+    social_media: "Snapchat"
+  },
+  {
+    social_media: "Pinterest"
+  },
+  {
+    social_media: "LinkedIn"
+  },
+  {
+    social_media: "BeReal"
+  }
+])
+
+
+puts "Seeding user_social_media_platfrom..."
+UserSocialMediaPlatform.create([
+  {
+    user_id: 1,
+    social_media_platform_id: 1
+  },
+  {
+    user_id: 1,
+    social_media_platform_id: 2
+  },
+  {
+    user_id: 1,
+    social_media_platform_id: 3
+  },
+  {
+    user_id: 1,
+    social_media_platform_id: 4
+  },
+  {
+    user_id: 2,
+    social_media_platform_id: 1
+  },
+  {
+    user_id: 2,
+    social_media_platform_id: 2
+  },
+  {
+    user_id: 2,
+    social_media_platform_id: 4
+  },
+  {
+    user_id: 2,
+    social_media_platform_id: 7
+  },
+  {
+    user_id: 2,
+    social_media_platform_id: 8
+  },
+  {
+    user_id: 3,
+    social_media_platform_id: 1
+  },
+  {
+    user_id: 3,
+    social_media_platform_id: 2
+  },
+  {
+    user_id: 3,
+    social_media_platform_id: 3
+  },
+  {
+    user_id: 3,
+    social_media_platform_id: 7
+  }
+])
+
+
+puts "✅ Done seeding!"
