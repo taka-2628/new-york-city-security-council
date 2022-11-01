@@ -12,11 +12,31 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='App'>
-        <Routes>
-          <Route path='/testing' element={<h1>testing</h1>}/>
-          <Route path='/' element={<h1>Page Count: {count}</h1>}/>
-        </Routes>
+      <div className="App">
+        <main>
+          <Routes>
+            <Route exact path="/" element={
+                <p>Home</p>
+              }
+            />
+            <Route exact path="/about" element={
+                <p>About</p>
+              }
+            />
+            <Route exact path="/Map" element={
+                <p>Map</p>
+              }
+            />
+            <Route exact path="/signin" element={
+                <p>Signin</p>
+              }
+            />
+            <Route exact path="/contibute" element={
+                <p>Contribute</p>
+              }
+            />
+          </Routes>
+        </main>
       </div>
     </BrowserRouter>
   )
