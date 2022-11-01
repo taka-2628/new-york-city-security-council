@@ -1,0 +1,2 @@
+class SocialMediaPlatformsController < ApplicationController
+end
