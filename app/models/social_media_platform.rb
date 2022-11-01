@@ -1,0 +1,2 @@
+class SocialMediaPlatform < ApplicationRecord
+end
