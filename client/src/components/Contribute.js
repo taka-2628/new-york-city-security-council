@@ -6,6 +6,7 @@ import GeolocateAddress from "./submit-forms/GeolocateAddress";
 import Image from "./submit-forms/Image";
 import Type from "./submit-forms/Type";
 import Other from "./submit-forms/Other";
+import Submit from "./submit-forms/Submit";
 
 function Contribute(){
   const [step, setStep] = useState(0);
@@ -98,6 +99,8 @@ function Contribute(){
         return <Type typeCheckedState={typeCheckedState} handleOnChangeType={handleOnChangeType} onStepChange={onStepChange} />;
       case 3:
         return <Other onwerCheckedState={onwerCheckedState} handleOnChangeOwner={handleOnChangeOwner} formData={formData} handleChange={handleChange} onStepChange={onStepChange} />;
+      case 4: 
+        return <Submit handleSubmit={handleSubmit} />
       default: 
         return <GeolocateAddress coordinates={coordinates} setCoordinates={setCoordinates} formData={formData} handleChange={handleChange} onStepChange={onStepChange}/>;
     }
