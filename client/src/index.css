@@ -2,9 +2,11 @@
 
 body {
   margin: 0;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Arimo', Arial, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background-color: black;
+  overflow: hidden;
 }
