@@ -8,7 +8,7 @@ function NavBar( { } ){
   const { user, setUser } = useContext(UserContext);
 
   function handleLogout(){
-    fetch("http://localhost:3000/logout", { method: "DELETE" })
+    fetch("/logout", { method: "DELETE" })
     .then((r) => {
       if (r.ok) {
         setUser(null);

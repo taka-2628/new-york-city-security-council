@@ -46,7 +46,7 @@ function SignupForm( { handleSwitch, neighborhoods, socialMedia } ){
       return returns
     }, [])
     
-    fetch("http://localhost:3000/signup", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
