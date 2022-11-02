@@ -5,6 +5,7 @@ import ReturnBtn from "./buttons/ReturnBtn";
 import GeolocateAddress from "./submit-forms/GeolocateAddress";
 import Image from "./submit-forms/Image";
 import Type from "./submit-forms/Type";
+import Other from "./submit-forms/Other";
 
 function Contribute(){
   const [step, setStep] = useState(0);
@@ -33,6 +34,7 @@ function Contribute(){
   }
 
   const [typeCheckedState, setTypeCheckedState] = useState( [true, false, false] );
+  const [onwerCheckedState, setOwnerCheckedState] = useState( [true, false, false] );
 
   function handleOnChangeType(position){
     const clickedState = typeCheckedState[position];
@@ -41,6 +43,15 @@ function Contribute(){
     
     console.log(updatedCheckedState);
     setTypeCheckedState(updatedCheckedState);
+  };
+
+  function handleOnChangeOwner(position){
+    const clickedState = onwerCheckedState[position];
+
+    const updatedCheckedState = clickedState ? onwerCheckedState : onwerCheckedState.map((item, index) => index === position ? !item : false);
+    
+    console.log(updatedCheckedState);
+    setOwnerCheckedState(updatedCheckedState);
   };
 
   function handleSubmit(){
@@ -85,6 +96,8 @@ function Contribute(){
         return <Image handleChange={handleChange} onStepChange={onStepChange} />;
       case 2:
         return <Type typeCheckedState={typeCheckedState} handleOnChangeType={handleOnChangeType} onStepChange={onStepChange} />;
+      case 3:
+        return <Other onwerCheckedState={onwerCheckedState} handleOnChangeOwner={handleOnChangeOwner} formData={formData} handleChange={handleChange} onStepChange={onStepChange} />;
       default: 
         return <GeolocateAddress coordinates={coordinates} setCoordinates={setCoordinates} formData={formData} handleChange={handleChange} onStepChange={onStepChange}/>;
     }
