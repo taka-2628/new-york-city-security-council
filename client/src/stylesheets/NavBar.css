@@ -1,5 +1,6 @@
 nav a {
   display: block;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.5em;
   padding: 5px 0;
@@ -16,4 +17,25 @@ nav a:hover {
 
 .nonactive-link {
   text-decoration: none;
+}
+
+/* NAV HOME */
+#nav-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+#nav-home a {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+}
+#nav-home a:hover {
+  color: #000000;
+  background-color: #ffffff;
+  font-style:normal;
+  font-weight: 450;
 }

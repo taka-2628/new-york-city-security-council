@@ -3,7 +3,7 @@ import '../stylesheets/NavBar.css';
 
 function NavHome(){
   return(
-    <nav>
+    <nav id="nav-home">
       <NavLink
         to="/about"
         exact="true"
