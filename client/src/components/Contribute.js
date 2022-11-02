@@ -3,8 +3,7 @@ import CameraSubmitForm from "./CameraSubmitForm";
 
 function Contribute(){
   return(
-    <div id="contribute">
-      <p>Contribute</p>
+    <div id="contribute" className="grid-container">
       <NavBar />
       <CameraSubmitForm />
     </div>
