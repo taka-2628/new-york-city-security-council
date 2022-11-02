@@ -4,7 +4,6 @@ import '../stylesheets/Home.css';
 function Home(){
   return(
     <div id="home">
-      <p>Home</p>
       <NavFullscreen />
       <div id="dark-filter"></div>
       <div id="title-animation-cont">
