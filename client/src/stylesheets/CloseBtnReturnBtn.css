@@ -1,12 +1,9 @@
-
-.close-btn,
-.back-arrow-btn {
+.close-return-btn {
   position: absolute;
-  top: 60px;
-  left: calc(12.5%);
-  height: 48px;
-  width: 48px;
-  font-size: 2.5em;
+  top: 10vh;
+  height: 40px;
+  width: 40px;
+  font-size: 2em;
   padding: 0;
   text-align: center;
   border: 1px solid #ffffff;
@@ -14,8 +11,25 @@
   color: #ffffff;
   text-decoration: none;
 }
-.close-btn:hover,
-.back-arrow-btn:hover {
+
+#close {
+  right: calc(16.6666%);
+}
+
+#return {
+  left: calc(16.6666%);
+}
+#close span {
+  position: relative;
+  top: 1px;
+}
+#return span {
+  position: relative;
+  top: -1px;
+}
+
+.close-btn:hover {
   font-style: normal;
   background-color: rgba(255, 255, 255, 0.25);
 }
+

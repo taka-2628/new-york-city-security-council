@@ -4,11 +4,12 @@ import '../../stylesheets/CloseBtnReturnBtn.css';
 function ReturnBtn(){
   return (
     <NavLink
-    to="/"
+    to="/about"
     exact="true"
-    className="close-btn"
+    id="return"
+    className="close-return-btn"
     >
-      &times;
+      <span>&#8592;</span>
     </NavLink>
   )
 }

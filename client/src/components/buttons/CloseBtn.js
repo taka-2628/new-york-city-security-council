@@ -6,9 +6,10 @@ function CloseBtn(){
     <NavLink
     to="/"
     exact="true"
-    className="close-btn"
+    id="close"
+    className="close-return-btn"
     >
-      &times;
+      <span>&times;</span>
     </NavLink>
   )
 }
