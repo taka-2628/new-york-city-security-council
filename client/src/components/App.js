@@ -37,7 +37,7 @@ function App() {
                 <LoginSignup />
               }
             />
-            <Route exact path="/contibute" element={
+            <Route exact path="/contribute" element={
                 <Contribute />
               }
             />

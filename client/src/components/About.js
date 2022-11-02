@@ -1,6 +1,11 @@
+import NavBar from "./NavBar";
+
 function About(){
   return(
-    <p>About</p>
+    <div id="about">
+      <p>About</p>
+      <NavBar />
+    </div>
   )
 }
 

@@ -1,6 +1,11 @@
+import NavBar from "./NavBar";
+
 function Contribute(){
   return(
-    <p>Contribute</p>
+    <div id="contribute">
+      <p>Contribute</p>
+      <NavBar />
+    </div>
   )
 }
 

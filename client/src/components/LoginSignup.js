@@ -1,6 +1,11 @@
+import NavBar from "./NavBar";
+
 function LoginSignup(){
   return(
-    <p>Signin/Signup</p>
+    <div id="login-signup">
+      <p>Signin/Signup</p>
+      <NavBar />
+    </div>
   )
 }
 
