@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {useNavigate} from 'react-router-dom';
 import '../stylesheets/LoginSignup.css';
 
-function LoginForm( { /*setCurrentUser*/ } ){
+import { UserContext } from '../context/user';
+
+function LoginForm( { } ){
+  const { setUser } = useContext(UserContext);
+  
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,7 +16,7 @@ function LoginForm( { /*setCurrentUser*/ } ){
 
   function handleSubmit(e){
     e.preventDefault();
-    /*
+
     fetch("/login", {
       method: "POST",
       headers: {
@@ -22,14 +26,13 @@ function LoginForm( { /*setCurrentUser*/ } ){
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          setCurrentUser(user);
-          navigate("/");
+          setUser(user);
+          navigate("/about");
         });
       } else {
         r.json().then((err) => setError(err.error));
       }
     });
-    */
   }
 
   return (
