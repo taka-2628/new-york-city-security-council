@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Home from './Home';
+import About from './About';
+import MapContainer from './MapContainer';
+import LoginSignup from './LoginSignup';
+import Contribute from './Contribute';
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -16,23 +22,23 @@ function App() {
         <main>
           <Routes>
             <Route exact path="/" element={
-                <p>Home</p>
+                <Home />
               }
             />
             <Route exact path="/about" element={
-                <p>About</p>
+                <About />
               }
             />
-            <Route exact path="/Map" element={
-                <p>Map</p>
+            <Route exact path="/map" element={
+                <MapContainer />
               }
             />
             <Route exact path="/signin" element={
-                <p>Signin</p>
+                <LoginSignup />
               }
             />
             <Route exact path="/contibute" element={
-                <p>Contribute</p>
+                <Contribute />
               }
             />
           </Routes>
