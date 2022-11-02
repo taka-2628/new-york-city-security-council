@@ -1,0 +1,104 @@
+#signup, #login {
+  width: 33.333%;
+}
+
+.login-signup-container {
+  width: calc(100% - 50px);
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.login-signup-container h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 2.5em;
+}
+.login-signup-container form {
+  text-align: left;
+}
+.login-signup-container label {
+  font-size: 0.75em;
+}
+.login-signup-container input{
+  width: calc(100% - 14px);
+  display: block;
+  margin: 6px 0px 12px 0px;
+  padding: 6px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Source Code Pro';
+  font-size: 0.9em;
+}
+.login-signup-container input:focus {
+  height: calc(1.25em - 1.5pt);
+  width: calc(100% - 16px);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+.login-signup-container input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(0,0,0, 0.75);
+  opacity: 1; /* Firefox */
+  font-family: 'Source Code Pro';
+}
+.login-signup-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(0,0,0, 0.75);
+  font-family: 'Source Code Pro';
+}
+.login-signup-container input::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(0,0,0, 0.75);
+  font-family: 'Source Code Pro';
+}
+
+.login-signup-container textarea {
+  height: 3em;
+  width: calc(100% - 14px);
+  margin: 6px 0px 12px 0px;
+  padding: 6px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Source Code Pro';
+  font-size: 0.9em;
+  letter-spacing: normal;
+}
+.login-signup-container textarea:focus {
+  height: calc(3em - 1.5pt);
+  width: calc(100% - 16px);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+.login-signup-container textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(0,0,0, 0.75);
+  opacity: 1; /* Firefox */
+  font-family: 'Source Code Pro';
+}
+.login-signup-container textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(0,0,0, 0.75);
+  font-family: 'Source Code Pro';
+}
+.login-signup-container textarea::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(0,0,0, 0.75);
+  font-family: 'Source Code Pro';
+}
+
+.login-signup-container input[type="submit"]{
+  width: 100%;
+  margin-top: 24px;
+  height: 32px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
+
+.login-signup-container .error-div {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.login-signup-container .error-div p {
+  font-size: 0.9em;
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
