@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { UserContext } from '../context/user';
 
 import Home from './Home';
 import About from './About';
@@ -8,12 +10,15 @@ import LoginSignup from './LoginSignup';
 import Contribute from './Contribute';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { setUser } = useContext(UserContext);
 
+  // auto-login
   useEffect(() => {
-    fetch('/hello')
-    .then((r) => r.json())
-    .then((data) => setCount(data.count))
+    fetch("http://localhost:3000/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
   }, []);
 
   return (
