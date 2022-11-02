@@ -1,5 +1,6 @@
-import NavBar from "./NavBar";
+import '../stylesheets/About.css';
 
+import NavBar from "./NavBar";
 import CloseBtn from "./buttons/CloseBtn";
 
 function About(){

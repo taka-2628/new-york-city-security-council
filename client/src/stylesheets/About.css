@@ -1,0 +1,13 @@
+.paragraph-wrapper {
+  margin: 10vh auto;
+  height: 75vh;
+  overflow: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.paragraph-wrapper::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+.paragraph-wrapper p {
+  margin-top: 0;
+}
