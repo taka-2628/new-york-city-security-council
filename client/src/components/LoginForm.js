@@ -4,7 +4,7 @@ import '../stylesheets/LoginSignup.css';
 
 import { UserContext } from '../context/user';
 
-function LoginForm( { } ){
+function LoginForm( { handleSwitch } ){
   const { setUser } = useContext(UserContext);
   
   const [username, setUsername] = useState("");
@@ -38,9 +38,21 @@ function LoginForm( { } ){
   return (
     <div id="login" className="five-nine">
       <div className="login-signup-container">
-        <h1>Login</h1>
+        <div className="title-hr-div">
+          <div>
+            <div className="title-wrapper">
+              <h4>Sign in</h4>
+            </div>
+            <hr id="left" />
+          </div>
+          <div>
+            <div className="title-wrapper l-s-not-selected">
+              <h4 onClick={handleSwitch}>Register</h4>
+            </div>
+            <hr/>
+          </div>
+        </div>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Username</label>
           <input
             type="text"
             className="username"
@@ -49,7 +61,6 @@ function LoginForm( { } ){
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             className="password"
@@ -58,8 +69,21 @@ function LoginForm( { } ){
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <input type="submit" value="Login"/>
+          <div className="submit-cont">
+            <div>
+              <input 
+                type="submit" 
+                value="&#x203A;"
+                className={ ( username && password) ? "active-submit" : ""}
+              />
+            </div>
+          </div>
         </form>
+
+        <div className="l-s-centered" id="forgot-password">
+          <p>forgot your <span>password?</span></p>
+        </div>
+        
         <div className="error-div">
           <p>{error}</p>
         </div>
