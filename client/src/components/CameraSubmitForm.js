@@ -3,12 +3,33 @@ import { useNavigate } from 'react-router-dom';
 
 function CameraSubmitForm( { /*currentUser*/ } ){
   const [title, setTitle] = useState("");
+  const [coordinates, setCoordinates] = useState(null);
+  const [coordiError, setCoordiError] = useState(null);
+
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
 
   const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate();
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(saveLocation);
+    } else { 
+      setCoordiError("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function saveLocation(position) {
+    let coordinates = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude
+    }
+    console.log(coordinates)
+    setCoordinates(coordinates);
+    setCoordiError(null);
+  }
 
   function handleSubmit(e){
     e.preventDefault();  
@@ -57,6 +78,20 @@ function CameraSubmitForm( { /*currentUser*/ } ){
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
+
+        <div>
+          <button onClick={() => getLocation()}>Get Your Geolocation</button>
+          { 
+            coordinates ? 
+            <div>
+              <span>Latitude: {coordinates.latitude}</span>
+              <span>Longitude: {coordinates.longitude}</span>
+            </div> : 
+            null
+          }
+          { coordiError ? <span>{coordiError}</span> : null}
+        </div>
+        
         <div className="half-width div-right">
           <label htmlFor="p-image">Image</label>
           <input 
