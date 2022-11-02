@@ -13,6 +13,10 @@ import Contribute from './Contribute';
 function App() {
   const { setUser } = useContext(UserContext);
 
+  const [cameras, setCameras] = useState([]);
+  const [neighborhoods, setNeighborhoods] = useState([]);
+  const [socialMedia, setSocialMedia] = useState([]);
+
   // auto-login
   useEffect(() => {
     fetch("http://localhost:3000/me").then((r) => {
@@ -20,6 +24,27 @@ function App() {
         r.json().then((user) => setUser(user));
       }
     });
+  }, []);
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/cameras'),
+      fetch('/neighborhoods'),
+      fetch('/social_media_platforms'),
+      
+    ]).then(function(responses){
+      return Promise.all(responses.map(function (response) {
+        return response.json();
+      }))
+    }).then(function(data){
+      const cameras = data[0];
+      const neighborhoods = data[1];
+      const socialMedia = data[2];
+
+      setCameras(cameras);
+      setNeighborhoods(neighborhoods);
+      setSocialMedia(socialMedia);
+    })
   }, []);
 
   return (
