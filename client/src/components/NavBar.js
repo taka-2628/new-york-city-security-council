@@ -17,7 +17,7 @@ function NavBar( { } ){
   }
 
   return(
-    <nav>
+    <nav className="three-five">
       <NavLink
         to="/about"
         exact="true"
