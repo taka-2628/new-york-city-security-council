@@ -1,0 +1,57 @@
+#home {
+  height: calc(100vh - 80px);
+  width: 100%;
+  margin: 0 auto 60px auto;
+  background-image: url('../assets/landing_placeholder.gif');
+  background-size: cover;
+}
+#dark-filter {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 5;
+  opacity: 0.25;
+}
+
+#title-animation-cont {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+#title-animation-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+#title-animation-wrapper h1 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 4em;
+  font-weight:bold;
+  animation: marquee 10s linear infinite;
+}
+
+#title-animation-wrapper .title-second {
+  animation-delay: 5s;
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%
+  }
+}
