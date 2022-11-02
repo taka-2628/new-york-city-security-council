@@ -65,7 +65,7 @@ function App() {
               }
             />
             <Route exact path="/signin" element={
-                <LoginSignup />
+                <LoginSignup neighborhoods={neighborhoods} socialMedia={socialMedia}/>
               }
             />
             <Route exact path="/contribute" element={

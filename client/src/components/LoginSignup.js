@@ -5,7 +5,7 @@ import SignupForm from "./SignupForm";
 import CloseBtn from "./buttons/CloseBtn";
 import ReturnBtn from "./buttons/ReturnBtn";
 
-function LoginSignup(){
+function LoginSignup({ neighborhoods, socialMedia }){
   const [ isLogin, setIsLogin ] = useState(true);
   
   function handleSwitch(){
@@ -17,7 +17,7 @@ function LoginSignup(){
     <div id="login-signup" className="grid-container">
       <CloseBtn />
       <ReturnBtn />
-      { isLogin ? <LoginForm handleSwitch={handleSwitch}/> : <SignupForm handleSwitch={handleSwitch}/> }
+      { isLogin ? <LoginForm handleSwitch={handleSwitch}/> : <SignupForm handleSwitch={handleSwitch} neighborhoods={neighborhoods} socialMedia={socialMedia}/> }
     </div>
   )
 }
