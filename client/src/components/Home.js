@@ -1,10 +1,10 @@
-import NavBar from "./NavBar";
+import NavFullscreen from "./NavFullscreen";
 
 function Home(){
   return(
     <div id="home">
       <p>Home</p>
-      <NavBar />
+      <NavFullscreen />
     </div>
   )
 }

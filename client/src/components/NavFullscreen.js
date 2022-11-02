@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import '../stylesheets/NavBar.css';
 
-function NavHome(){
+function NavFullscreen(){
   return(
-    <nav id="nav-home">
+    <nav id="nav-fullscreen">
       <NavLink
         to="/about"
         exact="true"
@@ -23,4 +23,4 @@ function NavHome(){
   )
 }
 
-export default NavHome;
+export default NavFullscreen;

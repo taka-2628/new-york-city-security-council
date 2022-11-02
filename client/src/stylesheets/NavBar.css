@@ -20,20 +20,20 @@ nav a:hover {
 }
 
 /* NAV HOME */
-#nav-home {
+#nav-fullscreen {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 10;
 }
-#nav-home a {
+#nav-fullscreen a {
   display: inline-block;
   margin-left: 12px;
   padding: 10px;
   border: 1px solid #ffffff;
   border-radius: 20px;
 }
-#nav-home a:hover {
+#nav-fullscreen a:hover {
   color: #000000;
   background-color: #ffffff;
   font-style:normal;
