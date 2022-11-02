@@ -49,7 +49,7 @@ function SignupForm( {  } ){
   }
 
   return (
-    <div id="signup">
+    <div id="signup" className="five-nine">
       <div className="login-signup-container">
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>

@@ -7,17 +7,16 @@ import ReturnBtn from "./buttons/ReturnBtn";
 
 function LoginSignup(){
   const [ isLogin, setIsLogin ] = useState(true);
+  
   function handleSwitch(){
     console.log('login')
     setIsLogin(!isLogin);
   }
   
   return(
-    <div id="login-signup" className="width-60">
-      <h1>Signin/Signup</h1>
+    <div id="login-signup" className="grid-container">
       <CloseBtn />
       <ReturnBtn />
-      
       { isLogin ? <LoginForm handleSwitch={handleSwitch}/> : <SignupForm handleSwitch={handleSwitch}/> }
     </div>
   )
