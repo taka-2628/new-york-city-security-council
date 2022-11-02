@@ -3,7 +3,7 @@ import { useState } from "react";
 import CloseBtn from "./buttons/CloseBtn";
 import ReturnBtn from "./buttons/ReturnBtn";
 import GeolocateAddress from "./submit-forms/GeolocateAddress";
-
+import Image from "./submit-forms/Image";
 
 function Contribute(){
   const [step, setStep] = useState(0);
@@ -69,6 +69,8 @@ function Contribute(){
     switch (step) {
       case 0:
         return <GeolocateAddress coordinates={coordinates} setCoordinates={setCoordinates} formData={formData} handleChange={handleChange} onStepChange={onStepChange}/>;
+      case 1:
+        return <Image handleChange={handleChange} onStepChange={onStepChange} />;
       default: 
         return <GeolocateAddress coordinates={coordinates} setCoordinates={setCoordinates} formData={formData} handleChange={handleChange} onStepChange={onStepChange}/>;
     }
