@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import ProgressBtn from "../buttons/ProgressBtn";
+
 function Geolocate( { coordinates, setCoordinates, handleSwitch, onStepChange } ){
   const [coordiError, setCoordiError] = useState(null);
 
@@ -46,6 +48,7 @@ function Geolocate( { coordinates, setCoordinates, handleSwitch, onStepChange } 
           </div>
         </div>
       </div>
+      <ProgressBtn onStepChange={onStepChange}/>
     </div>
   )
 }

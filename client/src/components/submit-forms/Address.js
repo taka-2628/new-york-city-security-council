@@ -1,3 +1,5 @@
+import ProgressBtn from "../buttons/ProgressBtn";
+
 function Address( { formData, handleChange, handleSwitch, onStepChange } ){
 
   return (
@@ -50,6 +52,7 @@ function Address( { formData, handleChange, handleSwitch, onStepChange } ){
           </form>
         </div>
       </div>
+      <ProgressBtn onStepChange={onStepChange}/>
     </div>
   )
 }
