@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import LoginForm from "./LoginForm";
-import SignupForm from "./SignupForm";
+import LoginForm from "./login-signup-forms/LoginForm";
+import SignupForm from "./login-signup-forms/SignupForm";
 import CloseBtn from "./buttons/CloseBtn";
 import ReturnBtn from "./buttons/ReturnBtn";
 

@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
-import '../stylesheets/LoginSignup.css';
+import '../../stylesheets/LoginSignup.css';
 
-import { UserContext } from '../context/user';
+import { UserContext } from '../../context/user';
 
 function SignupForm( { handleSwitch, neighborhoods, socialMedia } ){
   const { setUser } = useContext(UserContext);
