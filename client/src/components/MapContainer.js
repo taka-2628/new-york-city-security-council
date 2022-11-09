@@ -51,13 +51,13 @@ function MapContainer( { } ){
       <ControlPanel />
       <Map 
         initialViewState={{
-          longitude: -73.96,
-          latitude: 40.75,
-          zoom: 12,
+          longitude: -73.85,
+          latitude: 40.66,
+          zoom: 11,
           pitch: 50
         }}
         {...settings}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
+        mapStyle="mapbox://styles/th-th/cla9v6h47000014jxvv2ebgge"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
         <Source id="my-data" type="geojson" data={geojson}>
