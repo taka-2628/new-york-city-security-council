@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
 import {render} from 'react-dom';
-import Map, {Source, Layer} from 'react-map-gl';
+import Map, { Source, Layer, useMap, Marker} from 'react-map-gl'; 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../stylesheets/Map.css';
+
+//import linkNYC from '../data/link_nyc.geojson';
 
 import NavFullscreen from "./NavFullscreen";
 import ControlPanel from "./map-components/ControlPanel";
@@ -13,6 +15,9 @@ console.log(process.env);
 
 function MapContainer( { } ){
   const [viewport, setViewport] = useState();
+
+  const { map } = useMap();
+  const mapRef = useRef();
 
   const settings = {
     scrollZoom: true,
@@ -45,6 +50,16 @@ function MapContainer( { } ){
     }
   };
 
+  const onMapLoadedHandler = () => {
+    console.log("mapRef:");
+    console.log(typeof mapRef.current.setLayoutProperty === "function");
+
+    console.log("getMap()");
+    console.log(
+      typeof mapRef.current.getMap().setLayoutProperty === "function"
+    );
+  };
+
   return(
     <div id="map-container">
       <NavFullscreen />
@@ -57,6 +72,8 @@ function MapContainer( { } ){
           pitch: 50
         }}
         {...settings}
+        ref={mapRef}
+        onLoad={onMapLoadedHandler}
         mapStyle="mapbox://styles/th-th/cla9v6h47000014jxvv2ebgge"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
