@@ -9,6 +9,7 @@ import About from './About';
 import MapContainer from './MapContainer';
 import LoginSignup from './LoginSignup';
 import Contribute from './Contribute';
+import MyPage from './MyPage';
 
 function App() {
   const { setUser } = useContext(UserContext);
@@ -64,12 +65,16 @@ function App() {
                 <MapContainer />
               }
             />
+            <Route exact path="/contribute" element={
+                <Contribute />
+              }
+            />
             <Route exact path="/signin" element={
                 <LoginSignup neighborhoods={neighborhoods} socialMedia={socialMedia}/>
               }
             />
-            <Route exact path="/contribute" element={
-                <Contribute />
+            <Route exact path="/profile" element={
+                <MyPage />
               }
             />
           </Routes>
