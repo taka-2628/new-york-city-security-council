@@ -1,3 +1,5 @@
+import '../stylesheets/Community.css';
+
 import NavBar from "./NavBar";
 import CloseBtn from "./buttons/CloseBtn";
 
@@ -7,7 +9,7 @@ function Community(){
       <NavBar />
       <CloseBtn />
 
-      <div>
+      <div className="five-nine">
         <h1>Community</h1>
         
       </div>
