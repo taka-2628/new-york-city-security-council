@@ -19,3 +19,15 @@
 .four-ten {
   grid-column: 4 / 10;
 }
+
+/* five-nine scrollable */
+.scrollable-wrapper {
+  margin: 10vh auto;
+  height: 80vh;
+  overflow: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollable-wrapper::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}

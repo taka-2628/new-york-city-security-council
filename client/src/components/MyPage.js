@@ -9,7 +9,7 @@ function MyPage(){
       <NavBar />
       <CloseBtn />
 
-      <div className="five-nine">
+      <div className="five-nine scrollable-wrapper">
         <h1>My Profile</h1>
         
       </div>
