@@ -48,7 +48,6 @@ function Image( { handleChange, onStepChange } ){
         <div className="form-wrapper">
           <div id="image-uploader-cont">
             <div>
-              
               <input 
                 type="file" 
                 id="file"
@@ -57,7 +56,7 @@ function Image( { handleChange, onStepChange } ){
               />
               <label htmlFor="file"><button>UPLOAD</button></label>
               { fileName ? <p id="file-name">{fileName}</p> : null }
-              { imageURL ? <img id="image-preview" src={imageURL} /> : null }
+              { imageURL ? <div id="image-preview-cont"><img id="image-preview" src={imageURL} /></div> : null }
             </div>
           </div>
         </div>
