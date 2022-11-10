@@ -25,24 +25,6 @@ function NavBar( { } ){
       >
         About
       </NavLink>
-
-      {
-        user ?
-        <span
-          className="logout-btn"
-          onClick={handleLogout}
-        >
-          Logout
-        </span> :
-        <NavLink    
-          to="/signin"
-          exact="true"
-          className={({ isActive }) => (isActive ? "active-link" : "non-active-link")}
-        >
-          Login/Signup
-        </NavLink>
-      }
-
       <NavLink    
         to="/map"
         exact="true"
@@ -57,6 +39,31 @@ function NavBar( { } ){
       >
         Contribute
       </NavLink>
+      {
+        user ?
+        <>
+          <NavLink
+            to="/profile"
+            exact="true"
+            className={({ isActive }) => (isActive ? "active-link" : "non-active-link")}
+          >
+            My Page
+          </NavLink>
+          <span
+          className="logout-btn"
+          onClick={handleLogout}
+          >
+            Logout
+          </span> 
+        </> :
+        <NavLink    
+          to="/signin"
+          exact="true"
+          className={({ isActive }) => (isActive ? "active-link" : "non-active-link")}
+        >
+          Login/Signup
+        </NavLink>
+      }
     </nav>
   )
 }
