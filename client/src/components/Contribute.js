@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
+
+import { UserContext } from '../context/user';
 
 import CloseBtn from "./buttons/CloseBtn";
 import ReturnBtn from "./buttons/ReturnBtn";
@@ -9,6 +12,7 @@ import Other from "./submit-forms/Other";
 import Submit from "./submit-forms/Submit";
 
 function Contribute(){
+  const { user } = useContext(UserContext);
   const [step, setStep] = useState(0);
 
   function onStepChange(){
@@ -106,12 +110,21 @@ function Contribute(){
     }
   }
 
+  const navigateToLogin = () => {
+    return (
+      <div id="login-redirect" className="four-ten">
+        <p>Please Login Before Submitting Camera</p>
+        <NavLink to="/signin" exact="true">Go to login page</NavLink>
+      </div>
+    )
+  }
+
   return(
     <div id="contribute" className="grid-container">
       <CloseBtn />
       <ReturnBtn />
 
-      {conditionalComponent()}
+      { user ? conditionalComponent() : navigateToLogin() }
     </div>
   )
 }
