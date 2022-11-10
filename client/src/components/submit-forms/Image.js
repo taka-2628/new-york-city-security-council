@@ -4,6 +4,7 @@ import ProgressBtn from "../buttons/ProgressBtn";
 
 function Image( { handleChange, onStepChange } ){
   const [ fileName, setFileName ] = useState('');
+  const [ imageURL, setImageURL ] = useState('');
 
   function handleUploadingImage(e){
 
@@ -22,7 +23,7 @@ function Image( { handleChange, onStepChange } ){
     }).then(data => data.json())
     .then(data => {
         console.log(data);
-        console.log(data.data.link);
+        setImageURL(data.data.link);
         handleChange("image_url", data.data.link);
     })
   }
@@ -56,6 +57,7 @@ function Image( { handleChange, onStepChange } ){
               />
               <label htmlFor="file"><button>UPLOAD</button></label>
               { fileName ? <p id="file-name">{fileName}</p> : null }
+              { imageURL ? <img id="image-preview" src={imageURL} /> : null }
             </div>
           </div>
         </div>

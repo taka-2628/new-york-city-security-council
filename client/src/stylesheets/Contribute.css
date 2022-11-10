@@ -140,6 +140,9 @@
   font-size: 0.9em;
   text-align: center;
 }
+#image-uploader-cont #image-preview {
+  width: 30%;
+}
 
 /* TYPE & ADD INFO */
 .type-addinfo-cont {
