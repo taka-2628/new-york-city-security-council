@@ -8,18 +8,18 @@ function Image( { handleChange, onStepChange } ){
   function handleUploadingImage(e){
 
     console.log(e.target.files[0]);
-    setFileName(e.target.files[0].name);
+    //setFileName(e.target.files[0].name);
 
     const formdata = new FormData();
-    formdata.append('File', e.target.files[0]);
+    formdata.append("image", e.target.files[0]);
 
-    fetch("https://freeimage.host/api/1/upload?key=6d207e02198a847aa98d0a2a901485a5", { 
-      method: "POST",
-      mode: 'no-cors',
-      cache: 'no-cache',
-      body: formdata,
-    })
-    .then(data => data.json())
+    fetch("https://api.imgur.com/3/image/", {
+      method: "post",
+      headers: {
+        Authorization: "Client-ID 6db47bd7029562d"
+      },
+      body: formdata
+    }).then(data => data.json())
     .then(data => {
         console.log(data);
         handleChange("image_url", data.data.link);
@@ -49,7 +49,6 @@ function Image( { handleChange, onStepChange } ){
               
               <input 
                 type="file" 
-                name="file"
                 id="file"
                 onChange={(e) => handleUploadingImage(e)}
                 hidden
