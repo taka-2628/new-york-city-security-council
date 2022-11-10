@@ -7,8 +7,9 @@ import { UserContext } from '../context/user';
 import Home from './Home';
 import About from './About';
 import MapContainer from './MapContainer';
-import LoginSignup from './LoginSignup';
 import Contribute from './Contribute';
+import LoginSignup from './LoginSignup';
+import Community from './Community';
 import MyPage from './MyPage';
 
 function App() {
@@ -67,6 +68,10 @@ function App() {
             />
             <Route exact path="/contribute" element={
                 <Contribute />
+              }
+            />
+            <Route exact path="/community" element={
+                <Community />
               }
             />
             <Route exact path="/signin" element={
