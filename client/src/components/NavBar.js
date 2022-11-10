@@ -39,6 +39,13 @@ function NavBar( { } ){
       >
         Contribute
       </NavLink>
+      <NavLink    
+        to="/community"
+        exact="true"
+        className={({ isActive }) => (isActive ? "active-link" : "non-active-link")}
+      >
+        Community
+      </NavLink>
       {
         user ?
         <>
