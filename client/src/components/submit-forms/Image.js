@@ -8,7 +8,7 @@ function Image( { handleChange, onStepChange } ){
   function handleUploadingImage(e){
 
     console.log(e.target.files[0]);
-    //setFileName(e.target.files[0].name);
+    setFileName(e.target.files[0].name);
 
     const formdata = new FormData();
     formdata.append("image", e.target.files[0]);
@@ -16,12 +16,13 @@ function Image( { handleChange, onStepChange } ){
     fetch("https://api.imgur.com/3/image/", {
       method: "post",
       headers: {
-        Authorization: "Client-ID 6db47bd7029562d"
+        Authorization: "Client-ID 0b6ac8866679a6e"
       },
       body: formdata
     }).then(data => data.json())
     .then(data => {
         console.log(data);
+        console.log(data.data.link);
         handleChange("image_url", data.data.link);
     })
   }
