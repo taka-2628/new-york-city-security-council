@@ -1,1 +1,57 @@
+#my-page h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+#profile-cont {
+  width: 100%;
+}
+#my-page hr {
+  width: 100%;
+  margin-top: 30px;
+}
 
+#profile-cont form div {
+  width: calc(49%);
+  display: inline-block;
+  margin-bottom: 14px;
+}
+#profile-cont form div:nth-child(odd){
+  margin-right: 2%;
+}
+#profile-cont form div:nth-child(7),
+#profile-cont form div:nth-child(8){
+  width: calc(32%);
+  margin-right: 2%;
+}
+#profile-cont form div:nth-child(9){
+  width: calc(32%);
+  margin-right: 0;
+}
+#profile-cont form div:nth-child(10),
+#profile-cont form div:nth-child(12){
+  margin-right: 2%;
+}
+#profile-cont form div:nth-child(11),
+#profile-cont form div:nth-child(13){
+  margin-right: 0;
+}
+
+#profile-cont form label {
+  display: block;
+  color: rgba(255,255,255, 0.5);
+  font-size: small;
+}
+#profile-cont form input {
+  width: calc(100% - 6px);
+  padding: 6px 6px 6px 0;
+  border: none;
+  border-bottom: 1.5pt solid rgba(255,255,255, 0.25);
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Arimo', sans-serif;
+  font-size: 0.9em;
+}
+#profile-cont form input:focus {
+  outline: none;
+  border-bottom: 1.5pt solid rgba(255,255,255, 1);
+}
