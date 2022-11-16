@@ -15,6 +15,7 @@ import MyPage from './MyPage';
 function App() {
   const { setUser } = useContext(UserContext);
 
+  const [users, setUsers] = useState([]);
   const [cameras, setCameras] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
   const [socialMedia, setSocialMedia] = useState([]);
@@ -30,6 +31,7 @@ function App() {
 
   useEffect(() => {
     Promise.all([
+      fetch("/users"),
       fetch('/cameras'),
       fetch('/neighborhoods'),
       fetch('/social_media_platforms'),
@@ -39,10 +41,12 @@ function App() {
         return response.json();
       }))
     }).then(function(data){
-      const cameras = data[0];
-      const neighborhoods = data[1];
-      const socialMedia = data[2];
-
+      const users = data[0];
+      const cameras = data[1];
+      const neighborhoods = data[2];
+      const socialMedia = data[3];
+      
+      setUsers(users);
       setCameras(cameras);
       setNeighborhoods(neighborhoods);
       setSocialMedia(socialMedia);
@@ -71,7 +75,7 @@ function App() {
               }
             />
             <Route exact path="/community" element={
-                <Community />
+                <Community users={users}/>
               }
             />
             <Route exact path="/signin" element={

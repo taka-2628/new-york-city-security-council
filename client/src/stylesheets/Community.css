@@ -1,0 +1,19 @@
+#user-list-cont h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+#user-list-cont .user-cont {
+  background-color: rgba(255,255,255, 0.25);
+  margin-bottom: 14px;
+  padding: 8px;
+  border-radius: 12px;
+}
+#user-list-cont .user-cont  p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#user-list-cont .user-cont span,
+#user-list-cont .user-cont strong {
+  margin: 0 6px;
+}
