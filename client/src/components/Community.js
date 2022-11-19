@@ -25,12 +25,19 @@ function Community( {users} ){
       LinkedIn: logoLinkedIn,
       BeReal: logoBeReal
     }
-    
+
     return (
       <div key={user.id} className='user-cont'>
         <p><span>user:</span><strong>{user.username}</strong><span>neighborhood:</span><strong>{user.neighborhood.neighborhood}</strong></p>
         <p><span>contributions:</span><span><strong>{user.cameras.length}</strong>cameras uploaded</span><br/></p>
-        <span>social media:</span>{ user.social_media_platforms ? user.social_media_platforms.map((sns) => <span key={sns.id}>{sns.social_media}</span>) : null }
+        {
+            user.social_media_platforms.length !== 0 ? 
+            <div className="sns-cont">
+              <span>social media:</span>
+              {user.social_media_platforms.map((sns) => <div key={sns.id}><img src={logos[sns.social_media]}></img></div>)}
+            </div> :
+            null
+          }
       </div>
     )
   })

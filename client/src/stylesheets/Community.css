@@ -17,3 +17,12 @@
 #user-list-cont .user-cont strong {
   margin-right: 6px;
 }
+
+#user-list-cont .user-cont .sns-cont div {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+#user-list-cont .user-cont .sns-cont img {
+  height: 20px;
+}
