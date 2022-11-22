@@ -1,3 +1,17 @@
+#filter-cont {
+  height: 30px;
+}
+#filter-cont img {
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#filter-cont img.selected {
+  opacity: 1;
+}
+
 #user-list-cont h3 {
   margin-top: 0;
   margin-bottom: 12px;

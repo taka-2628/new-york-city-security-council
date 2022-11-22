@@ -75,7 +75,7 @@ function App() {
               }
             />
             <Route exact path="/community" element={
-                <Community users={users}/>
+                <Community users={users} socialMedia={socialMedia} />
               }
             />
             <Route exact path="/signin" element={
