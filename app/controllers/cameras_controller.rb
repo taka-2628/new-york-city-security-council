@@ -2,6 +2,9 @@ class CamerasController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
 
+  before_action :authorize
+  skip_before_action :authorize, only: [:index]
+
   def index
     cameras = Camera.all
     render json: cameras, include: ['user', 'neighborhood', 'comments', 'comments.user']
@@ -30,6 +33,10 @@ class CamerasController < ApplicationController
   end
 
   private 
+
+  def authorize
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+  end
 
   def find_camera
     Camera.find(params[:id])
