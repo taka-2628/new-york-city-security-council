@@ -23,8 +23,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_013122) do
     t.string "intersection"
     t.string "zipcode"
     t.string "borough"
-    t.text "description"
+    t.string "type"
     t.string "owner"
+    t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
