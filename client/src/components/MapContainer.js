@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { createRoot } from 'react-dom/client';
 import {render} from 'react-dom';
-import Map, { Source, Layer, useMap, Marker} from 'react-map-gl'; 
+import Map, { Source, Layer, useMap, Marker, Popup, GeolocateControl} from 'react-map-gl'; 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../stylesheets/Map.css';
 
@@ -14,9 +14,6 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 console.log(process.env);
 
 function MapContainer( { } ){
-  const [viewport, setViewport] = useState();
-
-  const { map } = useMap();
   const mapRef = useRef();
 
   const settings = {
