@@ -4,8 +4,8 @@ class CreateCameras < ActiveRecord::Migration[7.0]
       t.integer :user_id
       t.integer :neighborhood_id
       t.string :image_url
-      t.string :latitude
-      t.string :longitude
+      t.decimal :latitude
+      t.decimal :longitude
       t.string :address
       t.string :intersection
       t.string :zipcode
