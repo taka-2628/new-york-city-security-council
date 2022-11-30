@@ -333,4 +333,61 @@ UserSocialMediaPlatform.create([
 ])
 
 
+puts "Seeding cameras..."
+Camera.create([
+  {
+    user_id: 3, #test_takashi
+    neighborhood_id: 7, #upper west side
+    image_url: "https://i.imgur.com/ODH0p2g.jpg",
+    geometry: [40.815238, -73.960018],
+    address: "",
+    intersection: "",
+    zipcode: "",
+    borough: "",
+    camera_type: "Dome",
+    owner: "Other",
+    description: "It's on a black pole on the sidewalk (north) right outside of the partment."
+  },
+  {
+    user_id: 3, #test_takashi
+    neighborhood_id: 7, #upper west side
+    image_url: "https://i.imgur.com/rmxUeCc.jpg",
+    geometry: [40.816886, -73.958769],
+    address: "",
+    intersection: "",
+    zipcode: "",
+    borough: "",
+    camera_type: "Bullet",
+    owner: "Other",
+    description: "It's on a pole in a plaza in front of the Lenfest Center for the Arts."
+  },
+  {
+    user_id: 3, #test_takashi
+    neighborhood_id: 7, #upper west side
+    image_url: "https://i.imgur.com/yw78Jsh.jpg",
+    geometry: [40.817350, -73.958488],
+    address: "",
+    intersection: "",
+    zipcode: "",
+    borough: "",
+    camera_type: "Bullet",
+    owner: "Other",
+    description: "It's on the north facing facade of the Lenfest Center for the Arts."
+  },
+  {
+    user_id: 3, #test_takashi
+    neighborhood_id: 7, #upper west side
+    image_url: "https://i.imgur.com/SJKab3F.jpg",
+    geometry: [40.817538, -73.958680],
+    address: "",
+    intersection: "",
+    zipcode: "",
+    borough: "",
+    camera_type: "Dome",
+    owner: "Other",
+    description: "It's on a light pole on the sidewalk outside of the David Geffen Hall."
+  },
+])
+
+
 puts "✅ Done seeding!"
