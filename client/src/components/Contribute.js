@@ -60,26 +60,34 @@ function Contribute(){
   };
 
   function handleSubmit(){
-    const data = { ...formData, geometry: coordinates}
+    let typeSelected;
+    if (typeCheckedState[0]){
+      typeSelected = "Dome";
+    } else if (typeCheckedState[1]){
+      typeSelected = "Bullet";
+    } else if (typeCheckedState[2]){
+      typeSelected = "Other";
+    }
+
+    let ownerSelected;
+    if (onwerCheckedState[0]){
+      ownerSelected = "NYPD";
+    } else if (onwerCheckedState[1]){
+      ownerSelected = "Private Owner";
+    } else if (onwerCheckedState[2]){
+      ownerSelected = "Other";
+    }
+
+    const data = { ...formData, geometry: coordinates, type: typeSelected, owner: ownerSelected}
     console.log(data);
     
     /*
-    fetch("/projects", {
+    fetch("/cameras", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        user_id: currentUser.id,
-        title,
-        subtitle,
-        description,
-        image,
-        url,
-        github_url: github,
-        genres: selectedGenres,
-        technologies: selectedTechs
-      }),
+      body: JSON.stringify(data),
     }).then((r) => {
       if (r.ok) {
         r.json().then((project) => {
