@@ -339,7 +339,8 @@ Camera.create([
     user_id: 3, #test_takashi
     neighborhood_id: 7, #upper west side
     image_url: "https://i.imgur.com/ODH0p2g.jpg",
-    geometry: [40.815238, -73.960018],
+    latitude: 40.815238,
+    longitude: -73.960018,
     address: "",
     intersection: "",
     zipcode: "",
@@ -352,7 +353,8 @@ Camera.create([
     user_id: 3, #test_takashi
     neighborhood_id: 7, #upper west side
     image_url: "https://i.imgur.com/rmxUeCc.jpg",
-    geometry: [40.816886, -73.958769],
+    latitude: 40.816886,
+    longitude: 73.958769,
     address: "",
     intersection: "",
     zipcode: "",
@@ -365,7 +367,8 @@ Camera.create([
     user_id: 3, #test_takashi
     neighborhood_id: 7, #upper west side
     image_url: "https://i.imgur.com/yw78Jsh.jpg",
-    geometry: [40.817350, -73.958488],
+    latitude: 40.817350,
+    longitude: -73.958488,
     address: "",
     intersection: "",
     zipcode: "",
@@ -378,7 +381,8 @@ Camera.create([
     user_id: 3, #test_takashi
     neighborhood_id: 7, #upper west side
     image_url: "https://i.imgur.com/SJKab3F.jpg",
-    geometry: [40.817538, -73.958680],
+    latitude: 40.817538,
+    longitude: -73.958680,
     address: "",
     intersection: "",
     zipcode: "",
