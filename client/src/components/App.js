@@ -67,7 +67,7 @@ function App() {
               }
             />
             <Route exact path="/map" element={
-                <MapContainer />
+                <MapContainer cameras={cameras} />
               }
             />
             <Route exact path="/contribute" element={
@@ -79,7 +79,7 @@ function App() {
               }
             />
             <Route exact path="/signin" element={
-                <LoginSignup neighborhoods={neighborhoods} socialMedia={socialMedia}/>
+                <LoginSignup neighborhoods={neighborhoods} socialMedia={socialMedia} />
               }
             />
             <Route exact path="/profile" element={

@@ -13,7 +13,7 @@ import ControlPanel from "./map-components/ControlPanel";
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 console.log(process.env);
 
-function MapContainer( { } ){
+function MapContainer( { cameras } ){
   const mapRef = useRef();
 
   const settings = {
@@ -31,6 +31,8 @@ function MapContainer( { } ){
     maxPitch: 85
   }
 
+  console.log(cameras);
+  
   const geojson = {
     type: 'FeatureCollection',
     features: [
