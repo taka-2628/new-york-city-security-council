@@ -9,7 +9,7 @@ class CreateCameras < ActiveRecord::Migration[7.0]
       t.string :intersection
       t.string :zipcode
       t.string :borough
-      t.string :type
+      t.string :camera_type
       t.string :owner
       t.text :description
       t.datetime :created_at

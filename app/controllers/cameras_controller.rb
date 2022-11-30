@@ -43,7 +43,7 @@ class CamerasController < ApplicationController
   end
 
   def camera_params
-    params.permit(:user_id, :neighborhood_id, :image_url, :geometry, :address, :intersection, :zipcode, :borough, :type, :owner, :description )
+    params.permit(:user_id, :neighborhood_id, :image_url, :geometry, :address, :intersection, :zipcode, :borough, :camera_type, :owner, :description )
   end
 
   def render_not_found_response
