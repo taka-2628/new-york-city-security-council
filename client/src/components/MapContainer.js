@@ -9,12 +9,14 @@ import '../stylesheets/Map.css';
 
 import NavFullscreen from "./NavFullscreen";
 import ControlPanel from "./map-components/ControlPanel";
+import Pin from "./map-components/Pin"
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 console.log(process.env);
 
 function MapContainer( { cameras } ){
   const mapRef = useRef();
+  const [popupInfo, setPopupInfo] = useState(null);
 
   const settings = {
     scrollZoom: true,
@@ -31,8 +33,23 @@ function MapContainer( { cameras } ){
     maxPitch: 85
   }
 
-  console.log(cameras);
-  
+  const pins = cameras.map((camera, index) => (
+    <Marker
+      key={`marker-${index}`}
+      longitude={camera.longitude}
+      latitude={camera.latitude}
+      anchor="bottom"
+      onClick={e => {
+        // If we let the click event propagates to the map, it will immediately close the popup
+        // with `closeOnClick: true`
+        e.originalEvent.stopPropagation();
+        setPopupInfo(camera);
+      }}
+    >
+      <Pin />
+    </Marker>
+  ))
+
   const geojson = {
     type: 'FeatureCollection',
     features: [
@@ -76,6 +93,8 @@ function MapContainer( { cameras } ){
         mapStyle="mapbox://styles/th-th/cla9v6h47000014jxvv2ebgge"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
+
+        { pins }
         <Source id="my-data" type="geojson" data={geojson}>
           <Layer {...layerStyle} />
         </Source>
