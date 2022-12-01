@@ -78,7 +78,7 @@ function Contribute(){
       ownerSelected = "Other";
     }
 
-    const data = { ...formData, geometry: coordinates, camera_type: typeSelected, owner: ownerSelected}
+    const data = { ...formData, latitude: coordinates[1], longitude: coordinates[0], camera_type: typeSelected, owner: ownerSelected}
     console.log(data);
     
     /*
