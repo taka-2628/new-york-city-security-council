@@ -4,7 +4,7 @@ function SidePanel() {
 
   return(
     <div id="side-panel">
-      <h3>Control Panel</h3>
+      <h3>Side Panel</h3>
       <hr></hr>
       
     </div>

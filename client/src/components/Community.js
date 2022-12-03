@@ -8,7 +8,7 @@ import logoFacebook from "../assets/sns-Facebook.png";
 import logoInstagram from "../assets/sns-Instagram.png";
 import logoTwitter from "../assets/sns-Twitter.png";
 import logoTikTok from "../assets/sns-TikTok.png";
-import logoSnapchat from "../assets/sns-Snapchat.png";
+import logoSnapchat from "../assets/sns-SnapChat.png";
 import logoPinterest from "../assets/sns-Pinterest.png";
 import logoLinkedIn from "../assets/sns-LinkedIn.png";
 import logoBeReal from "../assets/sns-BeReal.png";
