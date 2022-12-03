@@ -18,4 +18,4 @@ function Pin({size = 20}) {
   );
 }
 
-export default React.memo(Pin);
+export default Pin;

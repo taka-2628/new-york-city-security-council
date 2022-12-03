@@ -9,7 +9,8 @@ import '../stylesheets/Map.css';
 
 import NavFullscreen from "./NavFullscreen";
 import ControlPanel from "./map-components/ControlPanel";
-import Pin from "./map-components/Pin"
+import Pin from "./map-components/Pin";
+import CameraInfo from "./map-components/CameraInfo";
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 console.log(process.env);
@@ -43,6 +44,7 @@ function MapContainer( { cameras } ){
         // If we let the click event propagates to the map, it will immediately close the popup
         // with `closeOnClick: true`
         e.originalEvent.stopPropagation();
+        console.log(camera)
         setPopupInfo(camera);
       }}
     >
@@ -95,10 +97,31 @@ function MapContainer( { cameras } ){
       >
 
         { pins }
+
+        {
+          popupInfo 
+          ? <Popup
+              anchor="top"
+              longitude={Number(popupInfo.longitude)}
+              latitude={Number(popupInfo.latitude)}
+              onClose={() => setPopupInfo(null)}
+            > 
+              <img width="100%" src={popupInfo.image_url} />
+              <div>
+              { popupInfo.user.username ? <><span>Uploaded by: {popupInfo.user.username}</span><br/></> : null }
+              { popupInfo.latitude && popupInfo.longitude ? <><span>Coordinates: ({popupInfo.latitude}, {popupInfo.longitude})</span><br/></> : null }
+              <p></p>
+              </div>
+            </Popup> 
+          : null
+        }
+
         <Source id="my-data" type="geojson" data={geojson}>
           <Layer {...layerStyle} />
         </Source>
       </Map>
+      
+      { /*popupInfo ? <CameraInfo camera={popupInfo}/> : null */} 
     </div>
   )
 }
