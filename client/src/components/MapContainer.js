@@ -11,13 +11,15 @@ import NavFullscreen from "./NavFullscreen";
 import ControlPanel from "./map-components/ControlPanel";
 import Pin from "./map-components/Pin";
 import CameraInfo from "./map-components/CameraInfo";
+import SidePanel from "./map-components/SidePanel";
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 console.log(process.env);
 
 function MapContainer( { cameras } ){
   const mapRef = useRef();
-  const [popupInfo, setPopupInfo] = useState(null);
+  const [ cameraSelected, setCameraSelected] = useState(null);
+  const [ isSidePanelOpen, setIsSidePanelOpen ] = useState(false);
 
   const settings = {
     scrollZoom: true,
@@ -44,8 +46,7 @@ function MapContainer( { cameras } ){
         // If we let the click event propagates to the map, it will immediately close the popup
         // with `closeOnClick: true`
         e.originalEvent.stopPropagation();
-        console.log(camera)
-        setPopupInfo(camera);
+        setCameraSelected(camera);
       }}
     >
       <Pin />
@@ -81,7 +82,8 @@ function MapContainer( { cameras } ){
   return(
     <div id="map-container">
       <NavFullscreen />
-      <ControlPanel />
+      {/*<ControlPanel />*/}
+      <SidePanel cameraSelected={cameraSelected}/>
       <Map 
         initialViewState={{
           longitude: -73.85,
@@ -99,17 +101,17 @@ function MapContainer( { cameras } ){
         { pins }
 
         {
-          popupInfo 
+          cameraSelected 
           ? <Popup
               anchor="top"
-              longitude={Number(popupInfo.longitude)}
-              latitude={Number(popupInfo.latitude)}
-              onClose={() => setPopupInfo(null)}
+              longitude={Number(cameraSelected.longitude)}
+              latitude={Number(cameraSelected.latitude)}
+              onClose={() => setCameraSelected(null)}
             > 
-              <img width="100%" src={popupInfo.image_url} />
+              <img width="100%" src={cameraSelected.image_url} />
               <div>
-              { popupInfo.user.username ? <><span>Uploaded by: {popupInfo.user.username}</span><br/></> : null }
-              { popupInfo.latitude && popupInfo.longitude ? <><span>Coordinates: ({popupInfo.latitude}, {popupInfo.longitude})</span><br/></> : null }
+              { cameraSelected.user.username ? <><span>Uploaded by: {cameraSelected.user.username}</span><br/></> : null }
+              { cameraSelected.latitude && cameraSelected.longitude ? <><span>Coordinates: ({cameraSelected.latitude}, {cameraSelected.longitude})</span><br/></> : null }
               <p></p>
               </div>
             </Popup> 
@@ -121,7 +123,7 @@ function MapContainer( { cameras } ){
         </Source>
       </Map>
       
-      { /*popupInfo ? <CameraInfo camera={popupInfo}/> : null */} 
+      { /*cameraSelected ? <CameraInfo camera={cameraSelected}/> : null */} 
     </div>
   )
 }
