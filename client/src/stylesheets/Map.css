@@ -10,50 +10,108 @@
   width: 100%;
 }
 
-/* Control Panel */
-#side-panel {
-  z-index: 10;
-  position: absolute;
-  top: 40px;
-  right: 30px;
-  height: calc(100% - 80px);
-  width: 25%;
-  background-color: rgba(35, 55, 75, 0.9);
-}
-
 /* Camera Info Popup - override mapbox default */
+.mapboxgl-popup {
+  width: 230px
+}
 .mapboxgl-popup-content {
   background-color: rgba(35, 55, 75, 0.9);
+  padding: 10px;
 }
-.mapboxgl-popup-content img {
-  margin-top: 10px;
-}
-.mapboxgl-popup-close-button {
+.mapboxgl-popup .mapboxgl-popup-close-button {
   background-color: transparent;
   color: #ffffff;
   border: 0;
-  border-radius: 0 3px 0 0;
   cursor: pointer;
   position: absolute;
   right: 3px;
   top: 3px;
 }
-.mapboxgl-popup-close-button:focus {
+.mapboxgl-popup .mapboxgl-popup-close-button:focus {
+  outline: none;
+}
+.mapboxgl-popup-content img {
+  width: 100%;
+  margin: 10px auto 0 auto;
+}
+.mapboxgl-popup-content #open-detail-btn {
+  margin-top: 6px;
+  padding: 0 5px;
+  background-color:transparent;
+  color: white;
+  font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.mapboxgl-popup-content #open-detail-btn:hover {
+  background-color:rgba(255, 255, 255, 0.15);
+}
+.mapboxgl-popup-content #open-detail-btn:focus {
   outline: none;
 }
 
-/* Camera Info Popup
-#camera-info-cont {
-  position: absolute;
-  top: 50%;
-  left: 37.5%;
-  transform: translate(-50%, -50%);
+/* Side Panel */
+.side-panel {
   z-index: 10;
-  height: 400px;
+  position: absolute;
+  right: -100%;
+  height: calc(100% - 40px);
   width: 25%;
+  padding: 20px;
+  min-width: 410px;
   background-color: rgba(35, 55, 75, 0.9);
+  transition: 0.5s;
 }
-#camera-info-cont img {
-  position: relative;
-  max-width: 40%;
-}*/
+.side-panel.active{
+  right: 0;
+}
+.side-panel-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  z-index: 5;
+}
+.side-panel-overlay.active {
+  visibility: visible;
+}
+
+#camera-info-cont {
+  display: flex;
+}
+#image-wrapper,
+#text-wrapper {
+  width: calc(50% - 5px);
+}
+#image-wrapper {
+  margin-right: 5px;
+}
+#text-wrapper {
+  margin-left: 5px;
+}
+#image-wrapper img {
+  max-width: 100%;
+}
+#text-wrapper h4 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+#text-wrapper hr {
+  border:none;
+  border-top: 0.5px solid #ffffff;
+}
+#text-wrapper .cam-info-text-group {
+  margin-top: 4px;
+}
+#text-wrapper span,
+#text-wrapper p {
+  font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+#text-wrapper p {
+  margin-top: 0;
+  line-height: 120%;
+}

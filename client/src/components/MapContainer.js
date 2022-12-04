@@ -52,7 +52,7 @@ function MapContainer( { cameras } ){
       <Pin />
     </Marker>
   ))
-
+  /*
   const geojson = {
     type: 'FeatureCollection',
     features: [
@@ -68,6 +68,7 @@ function MapContainer( { cameras } ){
       'circle-color': '#007cbf'
     }
   };
+  */
 
   const onMapLoadedHandler = () => {
     console.log("mapRef:");
@@ -79,11 +80,15 @@ function MapContainer( { cameras } ){
     );
   };
 
+  function toggleSidebar(){
+    isSidePanelOpen === true ? setIsSidePanelOpen(false) : setIsSidePanelOpen(true);
+  }
+
   return(
     <div id="map-container">
       <NavFullscreen />
       {/*<ControlPanel />*/}
-      <SidePanel cameraSelected={cameraSelected}/>
+      <SidePanel isSidePanelOpen={isSidePanelOpen} cameraSelected={cameraSelected} toggleSidebar={toggleSidebar}/>
       <Map 
         initialViewState={{
           longitude: -73.85,
@@ -112,15 +117,18 @@ function MapContainer( { cameras } ){
               <div>
               { cameraSelected.user.username ? <><span>Uploaded by: {cameraSelected.user.username}</span><br/></> : null }
               { cameraSelected.latitude && cameraSelected.longitude ? <><span>Coordinates: ({cameraSelected.latitude}, {cameraSelected.longitude})</span><br/></> : null }
-              <p></p>
+              <button id="open-detail-btn" onClick={toggleSidebar}>Open in Detail View</button>
               </div>
             </Popup> 
           : null
         }
 
-        <Source id="my-data" type="geojson" data={geojson}>
+        {
+        /*<Source id="my-data" type="geojson" data={geojson}>
           <Layer {...layerStyle} />
         </Source>
+        */
+        }
       </Map>
       
       { /*cameraSelected ? <CameraInfo camera={cameraSelected}/> : null */} 
