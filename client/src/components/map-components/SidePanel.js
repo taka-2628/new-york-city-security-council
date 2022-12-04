@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 function SidePanel({ isSidePanelOpen, cameraSelected, toggleSidebar}) {
+  console.log(cameraSelected)
+  const date = new Date(cameraSelected.created_at) // formated_Date - SDK returned date
+  const formatedDate = (`${date.getFullYear()}-${date.getMonth() +1 }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
 
   return(
     <>
@@ -13,7 +16,11 @@ function SidePanel({ isSidePanelOpen, cameraSelected, toggleSidebar}) {
             </div>
             <div id="text-wrapper">
               <h4>Camera Info</h4>
-              <><span>Uploaded by {cameraSelected.user.username}</span><br/></>
+              <div className="cam-info-text-group">
+                <><span>Uploaded by {cameraSelected.user.username}</span><br/></>
+                <><span>{formatedDate}</span><br/></>
+              </div>
+              <hr/>
               <div className="cam-info-text-group">
                 { cameraSelected.latitude && cameraSelected.longitude ? <><span>Lat: {cameraSelected.latitude}, Long: {cameraSelected.longitude}</span><br/></> : null}
                 { cameraSelected.address ? <><span>Address: {cameraSelected.address}</span><br/></> : null }
