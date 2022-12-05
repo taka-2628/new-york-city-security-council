@@ -80,6 +80,12 @@
   visibility: visible;
 }
 
+.side-panel hr {
+  margin: 10px 0;
+  border:none;
+  border-top: 1px solid #ffffff;
+}
+
 #camera-info-cont {
   display: flex;
 }
@@ -101,6 +107,7 @@
   margin-bottom: 4px;
 }
 #text-wrapper hr {
+  margin: 8px 0;
   border:none;
   border-top: 0.5px solid #ffffff;
 }
