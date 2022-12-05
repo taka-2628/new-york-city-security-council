@@ -393,5 +393,29 @@ Camera.create([
   },
 ])
 
+puts "Seeding comments..."
+Comment.create([
+  {
+    user_id: 1, #test_jo
+    camera_id: 1,
+    body: "I passed this location the other day but did not find any cameras there.",
+  },
+  {
+    user_id: 3, #test_takashi
+    camera_id: 1, 
+    body: "I will check it again.",
+  },
+  {
+    user_id: 2, #test_joyce
+    camera_id: 1, 
+    body: "They put up scaffolding now and it is hard to see but it's still there.",
+  },
+  {
+    user_id: 1,
+    camera_id: 1,
+    body: "Thank you for checking. I also went to check it and found another one on the other side of the building. So many in the area..",
+  },
+])
+
 
 puts "✅ Done seeding!"
