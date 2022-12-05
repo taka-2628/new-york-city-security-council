@@ -16,7 +16,7 @@ import SidePanel from "./map-components/SidePanel";
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
 console.log(process.env);
 
-function MapContainer( { cameras } ){
+function MapContainer( { cameras, setCameras } ){
   const mapRef = useRef();
   const [ cameraSelected, setCameraSelected] = useState(null);
   const [ isSidePanelOpen, setIsSidePanelOpen ] = useState(false);
@@ -88,7 +88,7 @@ function MapContainer( { cameras } ){
     <div id="map-container">
       <NavFullscreen />
       {/*<ControlPanel />*/}
-      <SidePanel isSidePanelOpen={isSidePanelOpen} cameraSelected={cameraSelected} toggleSidebar={toggleSidebar}/>
+      <SidePanel isSidePanelOpen={isSidePanelOpen} cameraSelected={cameraSelected} toggleSidebar={toggleSidebar} cameras={cameras} setCameras={setCameras}/>
       <Map 
         initialViewState={{
           longitude: -73.85,

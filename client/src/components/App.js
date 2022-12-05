@@ -67,7 +67,7 @@ function App() {
               }
             />
             <Route exact path="/map" element={
-                <MapContainer cameras={cameras} />
+                <MapContainer cameras={cameras} setCameras={setCameras} />
               }
             />
             <Route exact path="/contribute" element={

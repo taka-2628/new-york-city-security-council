@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import CommentSection from "./CommentSection";
 
-function SidePanel({ isSidePanelOpen, cameraSelected, toggleSidebar}) {
+function SidePanel({ isSidePanelOpen, cameraSelected, toggleSidebar, cameras, setCameras}) {
   
   const date = cameraSelected ? new Date(cameraSelected.created_at) : null // formated_Date - SDK returned date
   const formatedDate = cameraSelected ? (`${date.getFullYear()}-${date.getMonth() +1 }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`) : null;
@@ -46,7 +46,7 @@ function SidePanel({ isSidePanelOpen, cameraSelected, toggleSidebar}) {
           : null
         }
         <hr/>
-        {cameraSelected ? <CommentSection comments={cameraSelected.comments}/> : null}
+        {cameraSelected ? <CommentSection comments={cameraSelected.comments} cameraSelected={cameraSelected} cameras={cameras} setCameras={setCameras}/> : null}
       </div>
       <div className={`side-panel-overlay ${isSidePanelOpen == true ? 'active' : ''}`} onClick={toggleSidebar}></div>
     </>
