@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import EditComment from "./EditComment";
+
 import editIcon from "../../assets/edit-icon.png";
 import deleteIcon from "../../assets/delete-icon.png";
 
@@ -40,10 +42,9 @@ function Comment( { comment, user, onDeleteComment, onEditComment } ){
       {editDelete}
       { 
         editOn ? 
-        null /*<EditComment comment={comment} handleEdit={handleEdit}/>*/ :
+        <EditComment comment={comment} handleEdit={handleEdit}/> :
         <p>{comment.body}</p>
       }
-      
     </li>
   )
 }

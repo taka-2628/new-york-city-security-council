@@ -123,7 +123,6 @@
   line-height: 120%;
 }
 
-
 /* Comment Section */
 
 /* COMMENT LIST */
@@ -188,10 +187,50 @@
 .edit-delete img:hover {
   opacity: 0.5;
 }
-
 #comment-list li p {
   font-size: 0.75em;
   padding: 0 8px;
   margin-top: 0;
   margin-bottom: 8px;
+}
+
+/* Comment Edit Form */
+#comment-list ul li form {
+  display: flex;
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+#comment-list ul li form textarea {
+  height: 80px;
+  width: 80%;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: rgba(255,255,255, 0.1);
+}
+#comment-list ul li form textarea:focus {
+  height: calc(80px - 2px);
+  width: calc(80% -2px);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+#comment-list ul li form textarea::-webkit-scrollbar {
+  width: 10px;
+}
+#comment-list ul li form textarea::-webkit-scrollbar-track {
+  background: rgba(255,255,255, 0.2); 
+}
+#comment-list ul li form textarea::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255, 0.65); 
+  border-radius: 5px;
+}
+#comment-list ul li form input[type="submit"] {
+  width: 20%;
+  margin: 0;
+  background-color: rgba(255,255,255, 0.7);
+  border: none;
+  color: rgba(35, 55, 75, 1);
+}
+#comment-list ul li form input[type="submit"]:hover {
+  background-color: rgba(255,255,255, 1);
 }
