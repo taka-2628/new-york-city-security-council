@@ -1,11 +1,19 @@
-import { useState, useContext } from "react";
+import { useRef, useEffect, useContext } from "react";
 
 import { UserContext } from '../../context/user';
 
 import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 
 function CommentSection( { comments, cameraSelected, cameras, setCameras } ){
   const { user } = useContext(UserContext);
+
+  /* SCROLLABLE COMMENT LIST - scrolling always starts from bottom */
+  const scrollable = useRef(null);
+  useEffect(() => {
+    const scrollableUl = scrollable.current;
+    scrollableUl.scrollTop = scrollableUl.scrollHeight;
+  }, []);
 
   /* DELETE COMMENT */
   function onDeleteComment(id){
@@ -57,10 +65,13 @@ function CommentSection( { comments, cameraSelected, cameras, setCameras } ){
   return (
     <div id="comment-section">
       <div id="comment-list" >
-        <ul>
+        <ul ref={scrollable}>
           {commentlist}
         </ul>
       </div>
+      { 
+        user ? <CommentForm cameraSelected={cameraSelected} user={user} comments={comments} cameras={cameras} setCameras={setCameras}/> : null
+      }
     </div>
   )
 }

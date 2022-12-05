@@ -202,14 +202,14 @@
   margin-bottom: 8px;
 }
 #comment-list ul li form textarea {
-  height: 80px;
+  height: 60px;
   width: 80%;
   color: #ffffff;
   border: 1px solid #ffffff;
   background-color: rgba(255,255,255, 0.1);
 }
 #comment-list ul li form textarea:focus {
-  height: calc(80px - 2px);
+  height: calc(60px - 2px);
   width: calc(80% -2px);
   outline: none;
   border: 2px solid #ffffff;
@@ -232,5 +232,46 @@
   color: rgba(35, 55, 75, 1);
 }
 #comment-list ul li form input[type="submit"]:hover {
+  background-color: rgba(255,255,255, 1);
+}
+
+/* FORM */
+#comment-section #comment-form {
+  height: 10%;
+  display: flex;
+}
+#comment-section #comment-form textarea {
+  margin: 0;
+  padding: 3px;
+  height: 60px;
+  width: 70%;
+  border: 1px solid #ffffff;
+  background-color: rgba(255,255,255, 0.1);
+  color: #ffffff;
+}
+#comment-section #comment-form textarea:focus {
+  height: calc(60px - 2px);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+#comment-section #comment-form textarea::placeholder {
+  color: rgba(255,255,255, 0.75);
+  opacity: 1; /* Firefox */
+}
+#comment-section #comment-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(255,255,255, 0.75);
+}
+#comment-section #comment-form textarea::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(255,255,255, 0.75);
+}
+
+#comment-section #comment-form input[type="submit"] {
+  width: 30%;
+  margin: 0;
+  background-color: rgba(255,255,255, 0.7);
+  border: none;
+  color: rgba(35, 55, 75, 1);
+}
+#comment-section #comment-form input[type="submit"]:hover {
   background-color: rgba(255,255,255, 1);
 }
