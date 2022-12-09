@@ -22,14 +22,22 @@ class CamerasController < ApplicationController
 
   def update
     camera = find_camera
-    camera.update(camera_params)
-    render json: camera, status: :accepted
+    if session[:user_id] == camera.user.id
+      camera.update(camera_params)
+      render json: camera, status: :accepted
+    else
+      render json: {errors: camera.errors.full_messages}, status: :unauthorized
+    end
   end
 
   def delete
     camera = find_camera
-    camera.destroy
-    head :no_content, status: :deleted
+    if session[:user_id] == camera.user.id
+      camera.destroy
+      head :no_content, status: :deleted
+    else
+      render json: {errors: camera.errors.full_messages}, status: :unauthorized
+    end
   end
 
   private 

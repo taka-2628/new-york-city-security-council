@@ -11,14 +11,22 @@ class CommentsController < ApplicationController
 
   def update
     comment = find_comment
-    comment.update(comment_params)
-    render json: comment, status: :accepted
+    if session[:user_id] == comment.user.id
+      comment.update(comment_params)
+      render json: comment, status: :accepted
+    else
+      render json: {errors: comment.errors.full_messages}, status: :unauthorized
+    end
   end
 
   def destroy
     comment = find_comment
-    comment.destroy
-    head :no_content, status: :deleted
+    if session[:user_id] == comment.user.id
+      comment.destroy
+      head :no_content, status: :deleted
+    else
+      render json: {errors: comment.errors.full_messages}, status: :unauthorized
+    end
   end
   
   private
