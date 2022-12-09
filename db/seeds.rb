@@ -354,7 +354,7 @@ Camera.create([
     neighborhood_id: 7, #upper west side
     image_url: "https://i.imgur.com/rmxUeCc.jpg",
     latitude: 40.816886,
-    longitude: 73.958769,
+    longitude: -73.958769,
     address: "",
     intersection: "",
     zipcode: "",
