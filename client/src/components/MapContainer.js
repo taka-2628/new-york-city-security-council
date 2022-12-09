@@ -8,9 +8,7 @@ import '../stylesheets/Map.css';
 //import linkNYC from '../data/link_nyc.geojson';
 
 import NavFullscreen from "./NavFullscreen";
-import ControlPanel from "./map-components/ControlPanel";
 import Pin from "./map-components/Pin";
-import CameraInfo from "./map-components/CameraInfo";
 import SidePanel from "./map-components/SidePanel";
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_KEY;
@@ -87,7 +85,6 @@ function MapContainer( { cameras, setCameras } ){
   return(
     <div id="map-container">
       <NavFullscreen />
-      {/*<ControlPanel />*/}
       <SidePanel isSidePanelOpen={isSidePanelOpen} cameraSelected={cameraSelected} toggleSidebar={toggleSidebar} cameras={cameras} setCameras={setCameras}/>
       <Map 
         initialViewState={{
@@ -130,8 +127,6 @@ function MapContainer( { cameras, setCameras } ){
         */
         }
       </Map>
-      
-      { /*cameraSelected ? <CameraInfo camera={cameraSelected}/> : null */} 
     </div>
   )
 }
