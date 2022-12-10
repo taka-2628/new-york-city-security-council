@@ -46,6 +46,7 @@ function CommentForm( { cameraSelected, user, comments, cameras, setCameras }){
         placeholder="Write your comment.."
         value={commentBody}
         onChange={(e) => setCommentBody(e.target.value)}
+        required
       >
       </textarea>
       <input type="submit"></input>
