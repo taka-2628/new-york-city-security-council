@@ -7,7 +7,8 @@
 }
 #my-page hr {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 #profile-cont form div {
@@ -55,3 +56,40 @@
   outline: none;
   border-bottom: 1.5pt solid rgba(255,255,255, 1);
 }
+
+#my-cameras .camera-card{
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  display: flex;
+}
+#my-cameras img { 
+  max-width: calc(50% - 5px);
+  margin-right: 5px;
+}
+#my-cameras .text-wrapper hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#my-cameras .text-wrapper h4 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+#my-cameras .text-wrapper hr {
+  margin: 8px 0;
+  border:none;
+  border-top: 0.5px solid #ffffff;
+}
+#my-cameras .text-wrapper .cam-info-text-group {
+  margin-top: 4px;
+}
+#my-cameras .text-wrapper span,
+#my-cameras .text-wrapper p {
+  font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+#my-cameras .text-wrapper p {
+  margin-top: 0;
+  line-height: 120%;
+}
+
