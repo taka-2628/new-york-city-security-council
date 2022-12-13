@@ -23,7 +23,7 @@ class CamerasController < ApplicationController
   def update
     camera = find_camera
     if session[:user_id] == camera.user.id
-      camera.update(camera_params)
+      camera.update!(camera_params)
       render json: camera, status: :accepted
     else
       render json: {errors: camera.errors.full_messages}, status: :unauthorized

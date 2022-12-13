@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
   before_action :authorize
 
   def create
-    comment = Comment.create(comment_params)
+    comment = Comment.create!(comment_params)
     render json: comment, status: :created
   end
 
   def update
     comment = find_comment
     if session[:user_id] == comment.user.id
-      comment.update(comment_params)
+      comment.update!(comment_params)
       render json: comment, status: :accepted
     else
       render json: {errors: comment.errors.full_messages}, status: :unauthorized
