@@ -258,6 +258,9 @@
 #comment-list ul li form input[type="submit"]:hover {
   background-color: rgba(255,255,255, 1);
 }
+#comment-list .error-div {
+  width: 100%;
+}
 
 /* FORM */
 #comment-section #comment-form {
