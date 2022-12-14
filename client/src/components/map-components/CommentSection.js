@@ -76,8 +76,8 @@ function CommentSection( { comments, cameraSelected, cameras, setCameras } ){
         user 
         ? <CommentForm cameraSelected={cameraSelected} user={user} comments={comments} cameras={cameras} setCameras={setCameras}/> 
         : <div id="signin-redirect">
-            <p>Please login before comment:</p>
-            <Link to="/signin">Log in / Signup</Link>
+            <p>You must be logged in to comment:</p>
+            <Link to="/signin">Go to login page</Link>
           </div>
       }
     </div>
