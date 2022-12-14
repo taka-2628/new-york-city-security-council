@@ -1,0 +1,236 @@
+/* Side Panel */
+.side-panel {
+  z-index: 10;
+  position: absolute;
+  right: -100%;
+  height: calc(100% - 40px);
+  width: 25%;
+  padding: 20px;
+  min-width: 410px;
+  background-color: rgba(35, 55, 75, 0.9);
+  transition: 0.5s;
+}
+.side-panel.active{
+  right: 0;
+}
+.side-panel-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  z-index: 5;
+}
+.side-panel-overlay.active {
+  visibility: visible;
+}
+
+.side-panel-wrapper {
+  height: 100%;
+}
+
+#hr-wrapper hr{
+  width: 100%;
+  margin: 14px 0 18px 0;
+  border: none;
+  border-top: 1px solid #ffffff;
+}
+
+#camera-info-cont {
+  height: 275px;
+  display: flex;
+}
+
+#image-wrapper,
+#text-wrapper {
+  width: calc(50% - 5px);
+}
+#image-wrapper {
+  margin-right: 5px;
+}
+#text-wrapper {
+  margin-left: 5px;
+}
+#image-wrapper img {
+  max-width: 100%;
+}
+#text-wrapper h4 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+#text-wrapper hr {
+  margin: 8px 0;
+  border:none;
+  border-top: 0.5px solid #ffffff;
+}
+#text-wrapper .cam-info-text-group {
+  margin-top: 4px;
+}
+#text-wrapper span,
+#text-wrapper p {
+  font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+#text-wrapper p {
+  margin-top: 0;
+  line-height: 120%;
+}
+
+/* COMMENT SECTION */
+#comment-section {
+  height: calc(100% - 275px - 33px);
+}
+#comment-list {
+  height: calc(100% - 68px);
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: flex-end;
+  border-top: solid 1pt rgba(255,255,255, 0.2);
+  border-left: solid 1pt rgba(255,255,255, 0.2);
+  background-color: rgba(255,255,255, 0.01);
+}
+#comment-list ul {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
+  list-style: none;
+}
+/* scrollbar styling*/
+#comment-list ul::-webkit-scrollbar {
+  width: 10px;
+}
+#comment-list ul::-webkit-scrollbar-track {
+  background: rgba(255,255,255, 0.2); 
+}
+#comment-list ul::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255, 0.65); 
+  border-radius: 5px;
+}
+
+#comment-list li {
+  width: 90%;
+  margin: 16px auto;
+  position: relative;
+  border: solid 1px #ffffff;
+  border-radius: 10px;
+}
+.comment-header {
+  padding: 8px;
+  display: flex;
+}
+.comment-header span.username {
+  margin-right: 8px;
+  font-size: 0.85em;
+}
+.comment-header span.date {
+  margin-left: 8px;
+  font-size: 0.65em;
+  color: rgba(255,255,255, 0.65);
+}
+.edit-delete {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+.edit-delete img{
+  margin-left: 6px;
+  height: 15px;
+  width: 15px;
+}
+.edit-delete img:hover {
+  opacity: 0.5;
+}
+#comment-list li p {
+  font-size: 0.75em;
+  padding: 0 8px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Comment Edit Form */
+#comment-list ul li form {
+  display: flex;
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+#comment-list ul li form textarea {
+  height: 60px;
+  width: 80%;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: rgba(255,255,255, 0.1);
+}
+#comment-list ul li form textarea:focus {
+  height: calc(60px - 2px);
+  width: calc(80% -2px);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+#comment-list ul li form textarea::-webkit-scrollbar {
+  width: 10px;
+}
+#comment-list ul li form textarea::-webkit-scrollbar-track {
+  background: rgba(255,255,255, 0.2); 
+}
+#comment-list ul li form textarea::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255, 0.65); 
+  border-radius: 5px;
+}
+#comment-list ul li form input[type="submit"] {
+  width: 20%;
+  margin: 0;
+  background-color: rgba(255,255,255, 0.7);
+  border: none;
+  color: rgba(35, 55, 75, 1);
+}
+#comment-list ul li form input[type="submit"]:hover {
+  background-color: rgba(255,255,255, 1);
+}
+#comment-list .error-div {
+  width: 100%;
+}
+
+/* FORM */
+#comment-form {
+  height: 68px;
+  display: flex;
+}
+#comment-form textarea {
+  margin: 0;
+  padding: 3px;
+  height: 60px;
+  width: 70%;
+  border: 1px solid #ffffff;
+  background-color: rgba(255,255,255, 0.1);
+  color: #ffffff;
+}
+#comment-form textarea:focus {
+  height: calc(60px - 2px);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+#comment-form textarea::placeholder {
+  color: rgba(255,255,255, 0.75);
+  opacity: 1; /* Firefox */
+}
+#comment-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgba(255,255,255, 0.75);
+}
+#comment-form textarea::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgba(255,255,255, 0.75);
+}
+#comment-form input[type="submit"] {
+  height: 68px;
+  width: 30%;
+  margin: 0;
+  background-color: rgba(255,255,255, 0.7);
+  border: none;
+  color: rgba(35, 55, 75, 1);
+}
+#comment-form input[type="submit"]:hover {
+  background-color: rgba(255,255,255, 1);
+}

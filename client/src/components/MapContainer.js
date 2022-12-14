@@ -4,7 +4,7 @@ import {render} from 'react-dom';
 import Map, { Source, Layer, useMap, Marker, Popup, GeolocateControl} from 'react-map-gl'; 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../stylesheets/Map.css';
-
+import '../stylesheets/SidePanel.css';
 //import linkNYC from '../data/link_nyc.geojson';
 
 import NavFullscreen from "./NavFullscreen";
