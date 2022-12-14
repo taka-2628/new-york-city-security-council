@@ -1,4 +1,5 @@
 import { useRef, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { UserContext } from '../../context/user';
 
@@ -50,6 +51,8 @@ function CommentSection( { comments, cameraSelected, cameras, setCameras } ){
     setCameras(updatedCameras);
   }
 
+  /* */
+
   const commentlist = comments.map((comment) => {
     return (
       <Comment 
@@ -70,7 +73,12 @@ function CommentSection( { comments, cameraSelected, cameras, setCameras } ){
         </ul>
       </div>
       { 
-        user ? <CommentForm cameraSelected={cameraSelected} user={user} comments={comments} cameras={cameras} setCameras={setCameras}/> : null
+        user 
+        ? <CommentForm cameraSelected={cameraSelected} user={user} comments={comments} cameras={cameras} setCameras={setCameras}/> 
+        : <div id="signin-redirect">
+            <p>Please login before comment:</p>
+            <Link to="/signin">Log in / Signup</Link>
+          </div>
       }
     </div>
   )
