@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: new_york_city_security_council_production
   username: new_york_city_security_council
   password: <%= ENV["NEW_YORK_CITY_SECURITY_COUNCIL_DATABASE_PASSWORD"] %>
