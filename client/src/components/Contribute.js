@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { UserContext } from '../context/user';
 
@@ -11,9 +11,12 @@ import Type from "./submit-forms/Type";
 import Other from "./submit-forms/Other";
 import Submit from "./submit-forms/Submit";
 
-function Contribute(){
+function Contribute( cameras, setCameras ){
   const { user } = useContext(UserContext);
   const [step, setStep] = useState(0);
+  const [errors, setErrors] = useState("");
+
+  const navigate = useNavigate();
 
   function onStepChange(){
     setStep(step + 1)
@@ -78,10 +81,9 @@ function Contribute(){
       ownerSelected = "Other";
     }
 
-    const data = { ...formData, latitude: coordinates[1], longitude: coordinates[0], camera_type: typeSelected, owner: ownerSelected}
+    const data = { user_id: user.id, ...formData, latitude: coordinates[1], longitude: coordinates[0], camera_type: typeSelected, owner: ownerSelected}
     console.log(data);
     
-    /*
     fetch("/cameras", {
       method: "POST",
       headers: {
@@ -90,15 +92,15 @@ function Contribute(){
       body: JSON.stringify(data),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((project) => {
-          setProjects([...projects, project])
+        r.json().then((camera) => {
+          setCameras([...cameras, camera])
           navigate("/");
         });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
     });
-    */
+    
   }
 
   const conditionalComponent = () => {
@@ -112,7 +114,7 @@ function Contribute(){
       case 3:
         return <Other onwerCheckedState={onwerCheckedState} handleOnChangeOwner={handleOnChangeOwner} formData={formData} handleChange={handleChange} onStepChange={onStepChange} />;
       case 4: 
-        return <Submit handleSubmit={handleSubmit} />
+        return <Submit handleSubmit={handleSubmit} errors={errors}/>
       default: 
         return <GeolocateAddress coordinates={coordinates} setCoordinates={setCoordinates} formData={formData} handleChange={handleChange} onStepChange={onStepChange}/>;
     }

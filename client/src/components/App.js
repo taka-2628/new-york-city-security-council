@@ -71,7 +71,7 @@ function App() {
               }
             />
             <Route exact path="/contribute" element={
-                <Contribute />
+                <Contribute cameras={cameras} setCameras={setCameras}/>
               }
             />
             <Route exact path="/community" element={

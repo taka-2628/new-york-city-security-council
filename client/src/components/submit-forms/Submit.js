@@ -1,4 +1,4 @@
-function Submit( { handleSubmit } ){
+function Submit( { handleSubmit, errors } ){
 
   return (
     <div id="upload-form-cont" className="four-ten">
@@ -16,6 +16,15 @@ function Submit( { handleSubmit } ){
         <div className="form-wrapper">
           <div className="button-center-cont">
             <button className="center-btn" onClick={handleSubmit}>SUBMIT</button>
+            <div className="error-div">
+              <div className="error-p-wrapper">
+                {
+                  errors 
+                  ? errors.map((err) => (<p key={err} className="error-p">{err}</p>))
+                  : null 
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>
