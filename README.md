@@ -4,6 +4,10 @@ New York City Security Council is a full-stack web application that uses Rails A
 ## Background
 New York City Security Council is an online platform where residents and communty members of New York City can report surveillance cameras and have conversations around security, privacy and use of the technology. 
 
+<br/>
+
+<img src="./client/src/assets/preview-readme.png" alt="webpage-preview" title="new-york-city-security-council">
+
 ## Features
 - A user can sign up, log in and logout
 - A user can upload cameras
