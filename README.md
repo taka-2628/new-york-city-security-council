@@ -41,7 +41,7 @@ rails db:migrate db:seed
 ```
 rails s
 ```
-4. Run react server
+4. Open a new tab in terminal and run react server
 ```
 npm start --prefix client
 ```
